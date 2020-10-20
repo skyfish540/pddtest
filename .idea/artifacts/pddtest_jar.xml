@@ -1,0 +1,63 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pddtest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pddtest_jar</output-path>
+    <root id="archive" name="pddtest.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="pddtest" />
+      <element id="extracted-dir" path="F:/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-server/3.0.1/selenium-server-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-api/3.0.1/selenium-api-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/cn/com/antcloud/api/antcloud-api-iam/3.1.2/antcloud-api-iam-3.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/commons-io/commons-io/2.5/commons-io-2.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.23/htmlunit-core-js-2.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/sourceforge/htmlunit/htmlunit/2.23/htmlunit-2.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/htmlunit-driver/2.23/htmlunit-driver-2.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-remote-driver/3.0.1/selenium-remote-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/eclipse/jetty/websocket/websocket-common/9.2.15.v20160210/websocket-common-9.2.15.v20160210.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-opera-driver/3.0.1/selenium-opera-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/sourceforge/cssparser/cssparser/0.9.20/cssparser-0.9.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.0.1/selenium-firefox-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/eclipse/jetty/jetty-io/9.2.15.v20160210/jetty-io-9.2.15.v20160210.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/cn/com/antcloud/api/antcloud-api-baasdt/1.0.37/antcloud-api-baasdt-1.0.37.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/xalan/serializer/2.7.2/serializer-2.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/sourceforge/htmlunit/neko-htmlunit/2.23/neko-htmlunit-2.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/com/codeborne/phantomjsdriver/1.3.0/phantomjsdriver-1.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-safari-driver/3.0.1/selenium-safari-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/w3c/css/sac/1.3/sac-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/jetty-repacked/9.2.13.v20160825/jetty-repacked-9.2.13.v20160825.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/io/netty/netty/3.5.7.Final/netty-3.5.7.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-java/3.0.1/selenium-java-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/com/google/guava/guava/19.0/guava-19.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/cn/com/antcloud/api/antcloud-api-sdk/3.4.0/antcloud-api-sdk-3.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/eclipse/jetty/websocket/websocket-api/9.2.15.v20160210/websocket-api-9.2.15.v20160210.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-ie-driver/3.0.1/selenium-ie-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/com/beust/jcommander/1.48/jcommander-1.48.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-edge-driver/3.0.1/selenium-edge-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.0.1/selenium-chrome-driver-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/com/alibaba/fastjson/1.2.50/fastjson-1.2.50.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/eclipse/jetty/jetty-util/9.2.15.v20160210/jetty-util-9.2.15.v20160210.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/repository/org/seleniumhq/selenium/selenium-support/3.0.1/selenium-support-3.0.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

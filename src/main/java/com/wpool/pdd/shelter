@@ -1,0 +1,49 @@
+页面元素被遮挡点击不到解决方式
+按钮不在页面上被遮挡点击不到，有四种方式
+（1）将浏览器最大化
+WebElementUtils.getDirver().manage().window().maximize();
+（2）定位元素点击
+Actions actions = new Actions(WebElementUtils.getDirver());
+actions.moveToElement(element).click().perform();
+（3）移动滚动条
+JavascriptExecutor jse = (JavascriptExecutor)WebElementUtils.getDirver();
+jse.executeScript("scroll(250, 0)"); //按钮在顶部
+jse.executeScript("scroll(0, 250)"); //按钮在底部
+（4）当有蒙层在元素之上并且不消失时
+JavascriptExecutor js = (JavascriptExecutor) WebElementUtils.getDirver();
+js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", element);
+（5）备用方法，未用过
+JavascriptExecutor jse = (JavascriptExecutor)driver;
+jse.executeScript("arguments[0].scrollIntoView()", Webelement);
+IJavaScriptExecutor ex = (IJavaScriptExecutor)Driver;
+ex.ExecuteScript("arguments[0].click();", elementToClick);
+
+
+/***
+ * drive.manage().window().setSize(new Dimension(500, 1000));
+ * // 设置浏览器的宽和高
+ * drive.manage().window().maximize();
+ * // 将浏览器最大化
+ * drive.get("https://www.baidu.com");
+ * // 打开百度网址
+ * drive.navigate().back();
+ * // 后退
+ * drive.navigate().forward();
+ * // 前进 ，此处页面应该返回带百度网页
+ * drive.navigate().refresh();
+ * // 刷新网页。
+ * drive.findElement(By.id("kw")).clear();
+ * // 清楚输入框中的文本
+ * drive.findElement(By.id("kw")).sendKeys("selenium");
+ * // 向百度文本框中输入selenium
+ * // drive.findElement(By.id("su")).click();
+ * // 点击搜索提交按钮
+ * drive.findElement(By.id("su")).submit();
+ * // 此处submit()方法和click()方法一致，submit()用于提交表单。
+ * // 获取元素所在文本框的尺寸 (宽 、高）
+ * System.out.println(drive.findElement(By.id("kw")).getSize());
+ * // System.out.println( drive.findElement(By.id("su")).getText());
+ * System.out.println(drive.findElement(By.id("su")).getAttribute("value"));
+ * // 判断元素是否存在
+ * System.out.println(drive.findElement(By.id("kw")).isDisplayed());
+ */
