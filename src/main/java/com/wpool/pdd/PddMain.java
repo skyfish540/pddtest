@@ -297,7 +297,7 @@ public class PddMain {
             pfacevalue = "500";
             type = "002";
         }
-        logger.info(mNo + " ," + pfacevalue);
+        logger.info("手机号:"+mNo + " ,面值:" + pfacevalue);
 
         if ((!pfacevalue.equals("")) && (!mNo.equals("")) && (!oid.equals(""))) {
             //P42765   b5191d9fe885e389132a9314e8adbe33
@@ -531,13 +531,13 @@ public class PddMain {
                         //detailClick.click();
                         Thread.sleep(2000L);    //3s
                         String currentWindow = driver.getWindowHandle();
-                        logger.info("currentWindow->" + currentWindow);
+                        //logger.info("currentWindow->" + currentWindow);
                         Set<String> handles = driver.getWindowHandles();
                         Iterator<String> it = handles.iterator();
                         WebDriver newDriver = null;
                         while (it.hasNext()) {
                             String handle = it.next();
-                            logger.info("handles:" + handle);
+                            //logger.info("handles:" + handle);
                             if (!handle.equals(currentWindow)) {
                                 newDriver = driver.switchTo().window(handle);
                                 break;
@@ -550,9 +550,8 @@ public class PddMain {
                             for (; ; ) {
                                 count += 5;
                                 ps = newDriver.getPageSource();
-                                if ((ps.indexOf("请向右滑块完成拼图") < 0) &&
-                                        (ps.indexOf("请点击") < 0) &&
-                                        (ps.indexOf("ICN_outerWrapper_4-72-1 MDL_headerCloseIcon_4-72-1 ICN_type-close_4-72-1") < 0)) {
+                                if ((ps.indexOf("请向右滑块完成拼图") < 0) && (ps.indexOf("请点击") < 0) &&
+                                    (ps.indexOf("ICN_outerWrapper_4-72-1 MDL_headerCloseIcon_4-72-1 ICN_type-close_4-72-1") < 0)) {
                                     break;
                                 }
                                 logger.info("需要拼图");
@@ -586,7 +585,7 @@ public class PddMain {
                             ps = newDriver.getPageSource();
                             String mobileno = getmidstr("充值号码", "充值类型", ps);
                             mobileno = getmidstr("font-size: 12px;\"><div>", "<a data-testid=\"beast", mobileno);
-                            logger.info(gettimestr("yyyy-MM-dd HH:mm:ss") + "," + orderid);
+                            logger.info(gettimestr("yyyy-MM-dd HH:mm:ss") + ",订单号:" + orderid);
                             String payStr = getPfacevalueAndTpye(ps, orderid, mobileno);
                             //物流发货
                             if (StringUtils.isNotBlank(payStr)){
