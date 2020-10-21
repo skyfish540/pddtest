@@ -175,7 +175,7 @@ public class ChromeUtil {
             newDriver.findElement(By.xpath("//*[@id='showAll']/div[2]/div[2]/a")).click();
             Thread.sleep(2000L);
             //输入支付宝用户名
-            newDriver.findElement(By.xpath("//*[@id='J_TloginForm']/div/div[1]/input")).sendKeys("18114475132");
+            newDriver.findElement(By.xpath("//*[@id='J_TloginForm']/div/div[1]/input")).sendKeys("15051885736");
             Thread.sleep(2000L);
             //String js1 = "document.getElementById('J_password').style.display='block';"; getElementsByName
             //String js1 = "document.getElementById('J_password').type='text';";
@@ -183,7 +183,7 @@ public class ChromeUtil {
             ((JavascriptExecutor)newDriver).executeScript(js1);*/
 
             //输入支付宝密码
-            newDriver.findElement(By.xpath("//*[@id='payPasswd_rsainput']")).sendKeys("140504");
+            newDriver.findElement(By.xpath("//*[@id='payPasswd_rsainput']")).sendKeys("000000");
             Thread.sleep(2000L);
             //F:/pdd/image  div[3]表示当前层级下的第三个div标签 //input[@id='authcode1601021552615']
             System.out.println("等等5s");
@@ -205,21 +205,21 @@ public class ChromeUtil {
 
             Actions actions=new Actions(newDriver);
             WebElement elementPd1 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[1]/b"));
-            actions.sendKeys(elementPd1,"1").perform();
+            actions.sendKeys(elementPd1,"0").perform();
             TimeUnit.SECONDS.sleep(1);
             WebElement elementPd2 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[2]/b"));
-            actions.sendKeys(elementPd2,"4").perform();
+            actions.sendKeys(elementPd2,"0").perform();
             WebElement elementPd3 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[3]/b"));
             actions.sendKeys(elementPd3,"0").perform();
             TimeUnit.SECONDS.sleep(1);
             WebElement elementPd4 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[4]/b"));
-            actions.sendKeys(elementPd4,"5").perform();
+            actions.sendKeys(elementPd4,"0").perform();
             TimeUnit.SECONDS.sleep(1);
             WebElement elementPd5 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[5]/b"));
             actions.sendKeys(elementPd5,"0").perform();
             TimeUnit.SECONDS.sleep(1);
             WebElement elementPd6 = newDriver.findElement(By.xpath("//*[@id='payPassword_container']/div/i[6]/b"));
-            actions.sendKeys(elementPd6,"4").perform();
+            actions.sendKeys(elementPd6,"0").perform();
             TimeUnit.SECONDS.sleep(1);
             //点击确认付款
             newDriver.findElement(By.xpath("//*[@id='J_authSubmit']")).click();
