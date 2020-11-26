@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.wpool.pdd.util.RandTest;
 import com.wpool.pdd.util.TestBase64Image;
 import org.apache.commons.lang3.StringUtils;
@@ -486,6 +488,7 @@ public class PddMain {
         System.out.println("hello junit");
         String s = sendPayByCode("江苏移动流量充值1G", "ka089456123", "15051885736");
         System.out.println(s);
+
     }
 
     public static void main (String[]args){

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- status=debug 可以查看log4j的装配过程 -->
+<!--
+    monitorInterval="1800"指log4j2每隔1800秒（半小时），
+    自动监控该配置文件是否有变化，如果变化，则自动根据文件内容重新配置。
+-->
+<Configuration status="off" monitorInterval="1800">
+
+    <!--
+    定义了一些属性（，主要是为了后面引用起来方便。
+    -->
+    <properties>
+        <property name="LOG_HOME">D:/logger</property>
+        <property name="FILE_NAME">mylog</property>
+    </properties>
+
+    <Appenders>
+        <!-- 定义控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- 控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+        </Console>
+
+        <!--表示以文件方式记录-->
+        <RollingRandomAccessFile name="running-log"
+                                 fileName="${LOG_HOME}/${FILE_NAME}.log"
+                                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+            <!--
+                fileName:生成文件的名称
+                filePattern:文件格式
+                            filePattern与28行的SizeBasedTriggeringPolicy（表示单个文件最大多少容量）结合在一起，非常有用，
+                            以这段配置为例，当单个文件达到10M后，会自动将以前的内容，
+                            先创建类似 2014-09（年-月）的目录，然后按 "xxx-年-月-日-序号"命名，打成压缩包。
+            -->
+            <PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+            <!--策略-->
+            <Policies>
+                <!-- 每天生成一个日志文件 -->
+                <!--
+                    interval：integer类型，指定两次封存动作之间的时间间隔。
+                              单位:以日志的命名精度来确定单位，比如yyyy-MM-dd-HH 单位为小时，yyyy-MM-dd-HH-mm 单位为分钟
+                    modulate：boolean型，说明是否对封存时间进行调制。
+                              若modulate=true，则封存时间将以0点为边界进行偏移计算。比如，modulate=true，interval=4hours，
+                              那么假设上次封存日志的时间为03:00，则下次封存日志的时间为04:00，之后的封存时间依次为08:00，12:00，16:00
+                -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!-- 每到2kb生成一个日志文件 -->
+                <SizeBasedTriggeringPolicy size="2 KB"/>
+            </Policies>
+            <!--
+                最大保存文件数：表示压缩包，最多保留20个。
+                <DefaultRolloverStrategy max="20"/>，如果不做配置，默认是7，这个7指的是上面i的最大值，超过了就会覆盖之前的
+            -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!-- 文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用 -->
+        <!-- append为TRUE表示消息增加到指定文件中，false表示消息覆盖指定的文件内容，默认值是true -->
+        <File name="fileLog" fileName="${LOG_NAME}/fileLog.txt" append="false">
+            <PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+        </File>
+
+        <!--按天分日志文件-->
+        <RollingFile name="dailyRollingFile" fileName="${LOG_HOME}/dailyRollingFile.log"
+                     filePattern="${LOG_HOME}/$${date:yyyy-MM-dd}/dailyFile-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+            </Policies>
+        </RollingFile>
+
+        <!--按大小分日志文件:每次日志大小超过size，则这个size大小的日志会自动存放到按年份-月份-天建立的文件夹下面，并进行压缩-->
+        <RollingFile name="sizedRollingFile" fileName="${LOG_HOME}/sizedFile.log"
+                     filePattern="${LOG_HOME}/$${date:yyyy-MM-dd}/sizedFile-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+            <SizeBasedTriggeringPolicy size="2k" />
+        </RollingFile>
+
+        <!-- 这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入 -->
+        <!-- 按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+        <RollingFile name="RollingFile" fileName="${LOG_NAME}/app.log"
+                     filePattern="${LOG_NAME}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="dailyRollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
